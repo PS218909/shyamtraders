@@ -25,7 +25,7 @@ const HomePage = () => {
         <div className="page page-3">
           <div className="content">
             <h1>Get In Touch</h1>
-            <h3>We'd love to hear from you! If you have any questions, need more information about our products, or want to place an order, feel free to contact us.</h3>
+            <h3>We'd love to hear from you! If you have any questions, need more information about our products, or want to place an order, feel free to contact us via email or drop your requirement at the bottom of the page. We will reply soon.</h3>
             <h3>Email: <a href="mailto:shyammkg09@gmail.com">shyammkg09@gmail.com</a></h3>
           </div>
         </div>

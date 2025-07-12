@@ -221,3 +221,27 @@ nav div ul li:active {
     }
 
 }
+
+.form .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+}
+
+.form .row input, .row textarea {
+    background: hsl(var(--bg-light));
+    margin-block: 3px;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    border-bottom: 3px solid transparent;
+    &:focus {
+        border-bottom: 3px solid hsl(var(--accent-color-primary));
+    }
+}
+
+.row textarea {
+    resize: vertical;
+}
