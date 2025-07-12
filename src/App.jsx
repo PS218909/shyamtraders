@@ -33,9 +33,11 @@ function App() {
       <Header pageStatus={setCurrentPage} cntPage={currentPage} />
       <main>
         <div className="page-bg"></div>
-        {currentPage === "home" && <HomePage />}
-        {currentPage === "product" && <ProductPage />}
-        {currentPage === "about" && <AboutUsPage />}
+        <div className="page-container">
+          {currentPage === "home" && <HomePage />}
+          {currentPage === "product" && <ProductPage />}
+          {currentPage === "about" && <AboutUsPage />}
+        </div>
       </main>
       <footer>
         <div>

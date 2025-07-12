@@ -106,15 +106,15 @@ const ProductPage = () => {
                 const value = products[product];
                 return (
                     <div className='page' key={idx} id={product}>
-                        <div className='content'style={{display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '30px', height: '70%'}}>
+                        <div className='content sm'style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center', gap: '30px', height: '70%'}}>
                             <div className='content-img'>
                                 <img src={value.img} alt="" style={{width: '300px', height: '200px'}} />
                             </div>
                             <div className='content-desc'>
                                 <h1 style={{margin: '0px'}}>{value.description.name}</h1>
                                 <h3 style={{marginTop: '0px', fontSize: '18px'}}>{value.description['short-desc']}</h3>
-                                <h3 style={{fontSize: '24px'}}>Health Benefits</h3>
-                                <ul style={{fontSize: '18px'}}>
+                                <h3 style={{fontSize: '24px', margin: '0px'}}>Health Benefits</h3>
+                                <ul style={{fontSize: '18px', margin: '0px'}}>
                                     {
                                         value.description['health-benefits'].map(hb => {
                                             return (

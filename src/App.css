@@ -119,6 +119,26 @@ nav div ul li:active {
     border-bottom: 1px solid hsl(var(--accent-color-primary));
 }
 
+.page-container {
+    transition: 0.4s;
+}
+
+.rotate-animation {
+    animation: rotateRight .9s;
+}
+
+@keyframes rotateRight {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(90deg) translateX(300px);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
 .page {
     width: 100%;
     height: calc(100vh - 55px);
@@ -178,18 +198,6 @@ nav div ul li:active {
     opacity: 0.18;
 }
 
-@keyframes scrollHorizontal {
-    0% {
-        transform: translateX(0%);
-    }
-    50% {
-        transform: translateX(-50%);
-    }
-    100% {
-        transform: translateX(0%);
-    }
-}
-
 @media only screen and (max-width: 1000px) {
     header {
         position: relative;
@@ -202,10 +210,14 @@ nav div ul li:active {
         height: max-content;
         overflow: visible;
     }
+    .sm {
+        padding: 10px 0px;
+    }
     .page .content h1 {
         font-size: 24px;
     }
     .page .content h3 {
         font-size: 18px;
     }
+
 }
