@@ -9,14 +9,14 @@ import driedRagi from '../assets/bg-images/dried-ragi.jpg'
 
 const ProductPage = () => {
     const products = {
-        'brown-nuts': {
+        'ground-nuts': {
             img: brownNut,
             description: {
-                name: "Brown Nuts",
-                'short-desc': "Rich in protein, fiber, and healthy unsaturated fats.",
+                name: "Ground Nuts",
+                'short-desc': "Rich in healthy fats, protein, and antioxidants for overall wellness.",
                 'health-benefits': [
-                    "Supports heart health and lowers bad cholesterol.",
-                    "Rich in antioxidants that reduce inflammation."
+                    "Promotes heart health by lowering bad cholesterol.",
+                    "Supports muscle growth and energy production."
                 ]
             }
         },
