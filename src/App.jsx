@@ -67,7 +67,7 @@ function App() {
               <textarea rows={4} placeholder='Requirement/Feedback if any' value={userInputs.message} onChange={(e) => setUserInputs(prev => ({...prev, message: e.target.value}))} />
             </div>
             <div className='row'>
-              <button style={{backgroundColor: 'buttonface', border: '2px solid hsl(var(--accent-color-secondary))', borderRadius: '8px', width: '20%'}} onClick={(e) => {
+              <button style={{backgroundColor: 'buttonface', border: '2px solid hsl(var(--accent-color-secondary))', borderRadius: '8px'}} onClick={(e) => {
                 document.getElementById('message').style.color = 'red'
                 if (!/\S+@\S+\.\S+/.test(userInputs.email)) {
                   e.currentTarget.style.backgroundColor = 'red';
