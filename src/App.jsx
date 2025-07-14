@@ -7,7 +7,7 @@ import ProductPage from './components/productPage';
 import axios from 'axios';
 
 function App() {
-  const [currentPage, setCurrentPage] = useState("product");
+  const [currentPage, setCurrentPage] = useState("home");
   const [images, setImages] = useState([]);
   const [cntImg, setCntImg] = useState(0);
   const [userInputs, setUserInputs] = useState({fname: '', lname: '', email: '', message: ''});
