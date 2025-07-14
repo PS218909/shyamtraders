@@ -3,13 +3,13 @@ import {useState, useEffect} from 'react';
 const HomePage = () => {
     return (
       <>
-        <div className="page page-1">
+        <div className="page">
           <div className="content">
             <h1>Welcome to Shyam Trader's</h1>
             <h3>At Shyam Trader's, we offer top-quality seasonal goods. Our range of premium offerings includes wholesome ingredients that are rich in nutrients, and culture. We believe in offering only the best to our customers, and that's why our products are carefully sourced and prepared with the utmost care.</h3>
           </div>
         </div>
-        <div className="page page-2">
+        <div className="page">
           <div className="content">
             <h1>Why Choose US?</h1>
             <h3>
@@ -22,7 +22,7 @@ const HomePage = () => {
             </h3>
           </div>
         </div>
-        <div className="page page-3">
+        <div className="page">
           <div className="content">
             <h1>Get In Touch</h1>
             <h3>We'd love to hear from you! If you have any questions, need more information about our products, or want to place an order, feel free to contact us via email or drop your requirement at the bottom of the page. We will reply soon.</h3>

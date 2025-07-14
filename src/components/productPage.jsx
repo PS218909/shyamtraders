@@ -1,7 +1,9 @@
 import greenGram from '../assets/bg-images/green-grams.jpg'
-import brownNut from '../assets/bg-images/brown-nuts.webp'
+import maize from '../assets/bg-images/maize.jpg'
+import blackGram from '../assets/bg-images/Black_gram.jpg'
+import groundNut from '../assets/bg-images/groundNuts.jpg'
 import mahuaFlower from '../assets/bg-images/mahua-flowers.jpg'
-import mahuaSeeds from '../assets/bg-images/mahua-seeds.png'
+import mahuaSeeds from '../assets/bg-images/mahua-seeds.jpg'
 import millets from '../assets/bg-images/millets.jpg'
 import rice from '../assets/bg-images/rice.jpg'
 import sesameSeeds from '../assets/bg-images/sesame-seeds.jpg'
@@ -10,7 +12,7 @@ import driedRagi from '../assets/bg-images/dried-ragi.jpg'
 const ProductPage = () => {
     const products = {
         'ground-nuts': {
-            img: brownNut,
+            img: groundNut,
             description: {
                 name: "Ground Nuts",
                 'short-desc': "Rich in healthy fats, protein, and antioxidants for overall wellness.",
@@ -96,9 +98,33 @@ const ProductPage = () => {
                     "Helps control blood sugar and aids weight management."
                 ]
             }
+        },
+        'maize': { 
+            img: maize, 
+            description: { 
+                name: "Maize", 
+                'short-desc': "A versatile grain that provides energy and essential nutrients.",
+                'health-benefits': [
+                    "Rich in antioxidants, which support overall health.",
+                    "Promotes digestive health with its high fiber content.",
+                    "Boosts energy levels due to its natural carbohydrates."
+                ] 
+            } 
+        },
+        'black-gram': {
+            img: blackGram, 
+            description: {
+                name: "Black Gram", 
+                'short-desc': "Protein-packed legume that supports muscle growth and heart health.",
+                'health-benefits': [
+                    "Supports muscle growth with its high protein content.",
+                    "Rich in iron, which aids in preventing anemia.",
+                    "Helps regulate blood sugar levels and supports heart health."
+                ] 
+            }
         }
     }
-
+    
 
     return (
         <>
@@ -106,14 +132,12 @@ const ProductPage = () => {
                 const value = products[product];
                 return (
                     <div className='page' key={idx} id={product}>
-                        <div className='content sm'style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center', gap: '30px', height: '70%'}}>
-                            <div className='content-img'>
-                                <img src={value.img} alt="" style={{width: '300px', height: '200px'}} />
-                            </div>
-                            <div className='content-desc'>
-                                <h1 style={{margin: '0px'}}>{value.description.name}</h1>
-                                <h3 style={{marginTop: '0px', fontSize: '18px'}}>{value.description['short-desc']}</h3>
-                                <h3 style={{fontSize: '24px', margin: '0px'}}>Health Benefits</h3>
+                        <div className='content sm'style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center', gap: '30px', height: '70%', backgroundImage: `url("${value.img}")`, opacity: '1', backgroundRepeat: 'no-repeat', backgroundSize: 'cover'}}>
+                            <div className='content-desc' style={{}}>
+                                <div className="bg-light"></div>
+                                <h1 style={{margin: '0px', paddingInline: '20px'}}>{value.description.name}</h1>
+                                <h3 style={{marginTop: '0px', fontSize: '18px', paddingInline: '20px'}}>{value.description['short-desc']}</h3>
+                                <h3 style={{fontSize: '24px', margin: '0px', paddingInline: '20px'}}>Health Benefits</h3>
                                 <ul style={{fontSize: '18px', margin: '0px'}}>
                                     {
                                         value.description['health-benefits'].map(hb => {

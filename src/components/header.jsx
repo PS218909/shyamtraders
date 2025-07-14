@@ -9,6 +9,8 @@ const Header = (props) => {
                     <div className="nav-menu">
                         <ul>
                             <li className={props.cntPage === "home"?'active':''} onClick={() => {
+                                if (props.cntPage === "home")
+                                    return;
                                 document.getElementsByClassName("page-container")[0].classList.toggle("rotate-animation");
                                 setTimeout(() => {
                                     props.pageStatus("home");
@@ -16,6 +18,9 @@ const Header = (props) => {
                                 }, 600);
                                 }}>Home</li>
                             <li className={props.cntPage === "product"?'active':''} onClick={() => {
+                                if (props.cntPage === "product") {
+                                    return;
+                                }
                                 document.getElementsByClassName("page-container")[0].classList.toggle("rotate-animation");
                                 setTimeout(() => {
                                     props.pageStatus("product");
@@ -23,6 +28,8 @@ const Header = (props) => {
                                 }, 600);
                                 }}>Product's</li>
                             <li className={props.cntPage === "about"?'active':''} onClick={() => {
+                                if (props.cntPage === "about")
+                                    return;
                                 document.getElementsByClassName("page-container")[0].classList.toggle("rotate-animation");
                                 setTimeout(() => {
                                     props.pageStatus("about");

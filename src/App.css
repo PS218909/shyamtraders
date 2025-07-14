@@ -28,10 +28,10 @@
 }
 
 html, body {
-    /* background-color: hsl(var(--bg-dark)); */
+    background-color: hsl(var(--bg-dark));
     margin: 0px;
     padding: 0px;
-    font-family: monospace;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     text-wrap-mode: wrap;
     text-wrap-style: pretty;
     color: hsl(var(--text-primary));
@@ -203,6 +203,7 @@ nav div ul li:active {
         position: relative;
     }
     nav .nav-menu ul {
+        font-size: 14px;
         flex-wrap: wrap;
     }
     .page {
@@ -236,12 +237,31 @@ nav div ul li:active {
     border: none;
     outline: none;
     transition: 0.4s;
-    border-bottom: 3px solid transparent;
+    border: 3px solid hsl(var(--accent-color-secondary));
+    border-radius: 8px;
+    padding-inline: 8px;
     &:focus {
-        border-bottom: 3px solid hsl(var(--accent-color-primary));
+        border: 3px solid hsl(var(--accent-color-primary));
     }
 }
 
 .row textarea {
     resize: vertical;
+}
+
+.content-desc {
+    position: relative;
+    z-index: 0;
+    & .bg-light {
+        content: '';
+        width: 100%;
+        height: 100%;
+        border-radius: 20px;
+        background-color: hsl(var(--bg-light));
+        backdrop-filter: blur(20px);
+        display: block;
+        position: absolute;
+        opacity: 0.9;
+        z-index: -1;
+    }
 }

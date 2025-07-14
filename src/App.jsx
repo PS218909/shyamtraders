@@ -7,7 +7,7 @@ import ProductPage from './components/productPage';
 import axios from 'axios';
 
 function App() {
-  const [currentPage, setCurrentPage] = useState("home");
+  const [currentPage, setCurrentPage] = useState("product");
   const [images, setImages] = useState([]);
   const [cntImg, setCntImg] = useState(0);
   const [userInputs, setUserInputs] = useState({fname: '', lname: '', email: '', message: ''});
@@ -18,7 +18,8 @@ function App() {
   }, []);
 
   useEffect(() => {
-    document.getElementsByClassName("page-bg")[0].style.backgroundImage = `url(${images[cntImg]})`
+    if (document.getElementsByClassName("page-bg").length > 0)
+      document.getElementsByClassName("page-bg")[0].style.backgroundImage = `url(${images[cntImg]})`
     const intervalId = setInterval(() => {
       setCntImg(prev => (prev + 1)%images.length);
     }, 5000);
@@ -27,14 +28,15 @@ function App() {
   
   useEffect(() => {
     if (images.length === 0) return;
-    document.getElementsByClassName("page-bg")[0].style.backgroundImage = `url(${images[cntImg]})`;
+    if (document.getElementsByClassName("page-bg").length > 0)
+      document.getElementsByClassName("page-bg")[0].style.backgroundImage = `url(${images[cntImg]})`;
   }, [cntImg, images]);
   
   return (
     <>
       <Header pageStatus={setCurrentPage} cntPage={currentPage} />
       <main>
-        <div className="page-bg"></div>
+        <div className={currentPage === "product"?"":"page-bg"}></div>
         <div className="page-container">
           {currentPage === "home" && <HomePage />}
           {currentPage === "product" && <ProductPage />}
@@ -65,7 +67,7 @@ function App() {
               <textarea rows={4} placeholder='Requirement/Feedback if any' value={userInputs.message} onChange={(e) => setUserInputs(prev => ({...prev, message: e.target.value}))} />
             </div>
             <div className='row'>
-              <button style={{backgroundColor: 'buttonface'}} onClick={(e) => {
+              <button style={{backgroundColor: 'buttonface', border: '2px solid hsl(var(--accent-color-secondary))', borderRadius: '8px', width: '20%'}} onClick={(e) => {
                 document.getElementById('message').style.color = 'red'
                 if (!/\S+@\S+\.\S+/.test(userInputs.email)) {
                   e.currentTarget.style.backgroundColor = 'red';
@@ -78,7 +80,7 @@ function App() {
                   document.getElementById('message').innerText = 'You will be contacted soon'
                   document.getElementById('message').style.color = 'green'
                   e.currentTarget.style.backgroundColor = 'buttonface';
-                  axios.post('webhook_url', {'content': 'Hello from website', 'username': userInputs.email, 'embeds': [{'description': userInputs.message, 'title': `${userInputs.fname} ${userInputs.lname}`, }]}).then((res) => {
+                  axios.post('https://discord.com/api/webhooks/1393582454685700116/im-yEm0LvH4dlq_vBs-dCVGyOWLWSebnfd65Fi-_7TID-y1PEJ7_TKXrntXZ0bRBJyCA', {'username': userInputs.email, 'embeds': [{'description': userInputs.message, 'title': `${userInputs.fname} ${userInputs.lname}`, }]}).then((res) => {
                     setUserInputs({fname: '', lname: '', email: '', message: ''})
                   }).catch((err) => {
                     console.error(err)
